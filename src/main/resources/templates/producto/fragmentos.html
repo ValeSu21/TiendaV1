@@ -170,12 +170,39 @@
                                                 <h4>[[#{accion.actualizar}]]</h4>
                                             </div>
                                             <div class="card-body">
+                                                <div>
+                                                <label for="descripcion">[[#{producto.categoria}]]</label>
+                                                <select class="form-select" id="floatingSelect" aria-label="Floating label select example" name="idCategoria">
+                                                    <option th:each="c : ${categorias}"
+                                                            th:value="${c.idCategoria}"
+                                                            th:text="${c.descripcion}">
+                                                    </option>
+                                                </select>
+                                                </div>
                                                 <div class="mb-3">
                                                     <label for="descripcion">[[#{producto.descripcion}]]</label>
                                                     <input type="text" class="form-control" 
                                                            name="descripcion" th:field="*{descripcion}"
                                                            required="true">
                                                 </div>
+                                                <div class="mb-3">
+                                                    <label for="detalle">[[#{producto.detalle}]]</label>
+                                                    <input type="text" class="form-control" 
+                                                           name="detalle" th:field="*{detalle}"
+                                                           required="true">
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label for="descripcion">[[#{producto.precio}]]</label>
+                                                    <input type="number" class="form-control" 
+                                                           name="precio" th:field="*{precio}"
+                                                           required="true">
+                                                </div>
+                                                <label for="descripcion">[[#{producto.existencias}]]</label>
+                                                <input type="text" class="form-control" 
+                                                       name="existencias" th:field="*{existencias}"
+                                                       required="true">
+                                            </div>
+
                                                 <div class="mb-3">
                                                     <label for="activo">[[#{producto.activo}]]</label>
                                                     <input class="form-check-input" 
