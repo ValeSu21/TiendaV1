@@ -20,7 +20,7 @@ public class ProductoServiceImpl implements ProductoService{
         var productos = productoDao.findAll();
         
      if (activo) {
-            productos.removeIf(e -> !e.getActivo());
+            productos.removeIf(e -> !e.isActivo());
         }
                 return productos;
     }
